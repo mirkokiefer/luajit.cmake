@@ -16,5 +16,4 @@ script:
   - cd _build
   - cmake .. -DCMAKE_INSTALL_PREFIX=../_install
   - cmake --build . --target install
-  - ctest -V .
 
