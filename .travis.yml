@@ -1,0 +1,20 @@
+
+language: c
+
+compiler:
+  - clang
+  - gcc
+
+# Install cmake
+install:
+  - sudo apt-get update >/dev/null
+  - sudo apt-get -q install cmake valgrind
+
+# Run the Build script
+script:
+  - mkdir _build
+  - cd _build
+  - cmake .. -DCMAKE_INSTALL_PREFIX=../_install
+  - cmake --build . --target install
+  - ctest -V .
+
